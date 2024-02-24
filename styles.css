@@ -1,0 +1,184 @@
+/* Reset CSS */
+html, body, header, main, section, aside, footer {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    margin: 0;
+  }
+  
+  main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .sensor-section {
+    flex: 1 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .sensor-section h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+  }
+  
+  .sensor-readings {
+    padding: 20px;
+  }
+  
+  .sensor-reading {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .options {
+    margin-top: 20px;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    clear: both;
+  }
+  /* Add proper spacings to the BMI calculator section */
+  .bmi-page {
+    padding: 20px;
+  }
+  
+  #bmiForm {
+    margin-bottom: 20px;
+  }
+  
+  #bmiForm label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #bmiForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #bmiForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #bmiForm button:hover {
+    background-color: #0056b3;
+  }
+  
+  #bmiResult {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  #bmiForm input {
+    width: calc(100% - 20px); /* Adjust the width */
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  body {
+    background-image: url('diasense.jpg'); /* Replace 'your-image-file.jpg' with the filename of your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  #bmiResult {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333; /* Change text color */
+    background-color: #f9f9f9; /* Add background color */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  #bmiResult.good {
+    background-color: #7cff7c; /* Green background for good BMI */
+  }
+  
+  #bmiResult.overweight {
+    background-color: #ffad33; /* Orange background for overweight BMI */
+  }
+  
+  #bmiResult.obese {
+    background-color: #ff6666; /* Red background for obese BMI */
+  }
+  
+  
+  
+  
