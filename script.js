@@ -1,7 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // Function to update sensor readings
+  function updateSensorReadings(data) {
+    document.getElementById('pressureReadings').innerHTML = '<div class="sensor-reading">' + data.pressure1 + ' hg/mm</div><div class="sensor-reading">' + data.pressure2 + ' hg/mm</div><div class="sensor-reading">' + data.pressure3 + ' hg/mm</div>';
+    document.getElementById('temperatureReading').innerHTML = '<div class="sensor-reading">' + data.temperature + '°C</div>';
+    document.getElementById('angularOrientation').innerHTML = '<div class="sensor-reading">' + data.angularOrientation + '°</div>';
+  }
+
+  // Simulate receiving data from ESP8266 (replace with actual code to receive data from ESP8266)
+  var receivedData = {
+    temperature: 25.0,
+    pressure1: 1013.25,
+    pressure2: 1013.25,
+    pressure3: 1013.25,
+    angularOrientation: 0
+  };
+
+  // Update sensor readings with received data
+  updateSensorReadings(receivedData);
+
+  // BMI calculator functionality (remains unchanged)
   const bmiForm = document.getElementById('bmiForm');
   const bmiResult = document.getElementById('bmiResult');
-  const sensorReadings = document.getElementById('sensorReadings');
 
   bmiForm.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -35,24 +54,5 @@ document.addEventListener('DOMContentLoaded', function() {
     bmiResult.textContent = message;
     bmiResult.className = ''; // Reset classes
     bmiResult.classList.add(resultClass); // Add appropriate class
-  }
-
-  const ws = new WebSocket('ws://192.168.254.60'); 
-  
-  ws.onopen = function() {
-    console.log('WebSocket connected');
-  };
-  
-  ws.onmessage = function(event) {
-    const data = JSON.parse(event.data);
-    displaySensorReadings(data);
-  };
-  
-  function displaySensorReadings(data) {
-    let html = '';
-    for (const key in data) {
-      html += `<div class="sensor-reading">${key}: ${data[key]}</div>`;
-    }
-    sensorReadings.innerHTML = html;
   }
 });
